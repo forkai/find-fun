@@ -1,0 +1,47 @@
+
+page {
+  font-family: -apple-system-font, Helvetica, 'Helvetica Neue', sans-serif;
+  background: #f8f8f8;
+  -webkit-overflow-scrolling: touch;
+  --txt-primary: #000000;
+  --txt-second: #888888;
+  --txt-content: #353535;
+  --txt-third: #b2b2b2;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.container {
+  position: relative;
+}
+.page {
+  .page-loading {
+    height: 100rpx;
+  }
+}
+.picker-col {
+  line-height: 50px;
+  text-align: center;
+}
+.dialog {
+  .title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40rpx;
+    .center {
+      flex-grow: 1;
+      text-align: center;
+      font-size: 32rpx;
+    }
+    .btn {
+      padding: 30rpx 40rpx;
+      font-size: 34rpx;
+      font-weight: bold;
+      &.btn-confirm {
+        color: #09bb07;
+      }
+    }
+  }
+}
