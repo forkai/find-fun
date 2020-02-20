@@ -1,7 +1,9 @@
 {
   "extends": ["taro"],
   "rules": {
+    "import/prefer-default-export": "off",
     "no-unused-vars": ["error", { "varsIgnorePattern": "Taro" }],
+     "jsx-quotes": ["off", "prefer-double"],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx"] }]
   },
     "parser": "@typescript-eslint/parser",

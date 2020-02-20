@@ -2,7 +2,7 @@ import Taro, { Component, Config } from '@tarojs/taro'
 import { Provider } from '@tarojs/redux'
 import dva from './dva/index'
 import models from './models/index'
-
+import { set as setGlobalData } from './global_data'
 import Index from './pages/index'
 import './app.less'
 import './assets/font.wxss'
@@ -19,7 +19,11 @@ const dvaApp = dva.createApp({
 const store = dvaApp.getStore()
 
 class App extends Component {
-  componentDidMount() {}
+  componentDidMount() {
+    const scene = decodeURIComponent(this.$router.params.scene)
+    // console.log(scene)
+    Taro.setStorageSync('scene', scene)
+  }
 
   componentDidShow() {}
 
@@ -37,9 +41,9 @@ class App extends Component {
   config: Config = {
     pages: ['pages/index/index', 'pages/home/index', 'pages/notice/index', 'pages/me/index'],
     window: {
-      backgroundTextStyle: 'dark',
-      navigationBarBackgroundColor: '#f8f8f8',
-      backgroundColor: '#f8f8f8',
+      backgroundTextStyle: 'light',
+      navigationBarBackgroundColor: '#ffffff',
+      backgroundColor: '#ffffff',
       navigationBarTitleText: '职淘趣',
       navigationBarTextStyle: 'black'
     },
